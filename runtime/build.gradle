@@ -1,0 +1,20 @@
+apply plugin: 'io.rhizomatic.assembly'
+
+def rzVersion = '1.0-SNAPSHOT'
+
+rhizomaticAssembly {
+    bootstrapModule = "bootstrap-message-dev"
+    bootstrapName = "bootstrap"
+    appGroup = "io.rhizomatic.samples"
+}
+
+dependencies {
+    compile group: 'io.rhizomatic', name: 'rhizomatic-kernel', version: rzVersion
+    compile group: 'io.rhizomatic', name: 'rhizomatic-inject', version: rzVersion
+    compile group: 'io.rhizomatic', name: 'rhizomatic-web', version: rzVersion
+
+    compile project(":webapp")
+    compile project(":message-service")
+    compile project(":bootstrap-message-dev")
+}
+

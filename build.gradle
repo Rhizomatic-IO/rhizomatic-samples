@@ -1,0 +1,53 @@
+buildscript {
+
+    repositories {
+        jcenter()
+        mavenLocal()
+    }
+
+    dependencies {
+        classpath group: 'io.rhizomatic', name: 'rhizomatic-assembly', version: '1.0-SNAPSHOT'
+    }
+
+}
+
+plugins {
+    id 'com.zyxist.chainsaw' version '0.1.3'
+    id "org.zeroturnaround.gradle.jrebel" version "1.1.6"
+}
+
+def rzVersion = '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.9
+
+subprojects {
+    group 'io.rhizomatic.samples'
+    version '1.0-SNAPSHOT'
+
+    repositories {
+        jcenter()
+        mavenLocal()
+
+    }
+
+    apply plugin: 'java'
+    apply plugin: 'com.zyxist.chainsaw'
+
+    dependencies {
+        compile group: 'io.rhizomatic', name: 'rhizomatic-api', version: rzVersion
+        compile group: 'javax.inject', name: 'javax.inject', version: '1'
+        compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.1'
+
+        compile group: 'org.jetbrains', name: 'annotations', version: '15.0'
+
+        testCompile group: 'junit', name: 'junit', version: '4.12'
+        testCompile group: 'org.easymock', name: 'easymock', version: '3.5.1'
+
+        testCompile group: 'io.rhizomatic', name: 'rhizomatic-kernel', version: rzVersion
+        testCompile group: 'io.rhizomatic', name: 'rhizomatic-inject', version: rzVersion
+        testCompile group: 'io.rhizomatic', name: 'rhizomatic-web', version: rzVersion
+
+    }
+}
+
+                                                                      

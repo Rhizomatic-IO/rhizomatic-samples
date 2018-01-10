@@ -1,0 +1,9 @@
+rootProject.name = 'RhizomaticSamples'
+
+include ':bootstrap-message-dev'
+include ':bootstrap-message-production'
+
+include ':message-api', ':message-service'
+
+include ':runtime'
+include ':webapp'

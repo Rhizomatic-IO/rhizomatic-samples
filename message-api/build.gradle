@@ -1,0 +1,6 @@
+javaModule.name = 'io.rhizomatic.samples.message.api'
+
+
+dependencies {
+  compile project(':message-service')
+}
