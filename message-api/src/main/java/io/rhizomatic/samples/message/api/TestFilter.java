@@ -20,7 +20,7 @@ public class TestFilter implements ContainerRequestFilter {
     protected MessageService messageService;
 
     public void filter(ContainerRequestContext requestContext) throws IOException {
-        System.out.println("Intercepting:" + messageService.message());
+        System.out.println("Intercepting: " + messageService.message());
     }
 }
 

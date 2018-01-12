@@ -6,12 +6,16 @@ rhizomaticAssembly {
     bootstrapModule = "bootstrap-message-dev"
     bootstrapName = "bootstrap"
     appGroup = "io.rhizomatic.samples"
+    appCopy = false;
+    reload = true;
+    // dependsOn jar
 }
 
 dependencies {
     compile group: 'io.rhizomatic', name: 'rhizomatic-kernel', version: rzVersion
     compile group: 'io.rhizomatic', name: 'rhizomatic-inject', version: rzVersion
     compile group: 'io.rhizomatic', name: 'rhizomatic-web', version: rzVersion
+    compile group: 'io.rhizomatic', name: 'rhizomatic-reload', version: rzVersion
 
     compile project(":webapp")
     compile project(":message-service")
