@@ -1,6 +1,5 @@
 apply plugin: 'io.rhizomatic.assembly'
 
-def rzVersion = '1.0-SNAPSHOT'
 
 rhizomaticAssembly {
     bootstrapModule = "bootstrap-message-dev"

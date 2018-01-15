@@ -6,7 +6,7 @@ buildscript {
     }
 
     dependencies {
-        classpath group: 'io.rhizomatic', name: 'rhizomatic-assembly', version: '1.0-SNAPSHOT'
+        classpath group: 'io.rhizomatic', name: 'rhizomatic-assembly', version: rzVersion
     }
 
 }
@@ -18,13 +18,12 @@ plugins {
 
 defaultTasks 'clean', 'build', 'rhizomaticAssembly'
 
-def rzVersion = '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.9
 
 subprojects {
     group 'io.rhizomatic.samples'
-    version '1.0-SNAPSHOT'
+    version '0.1-SNAPSHOT'
 
     repositories {
         jcenter()

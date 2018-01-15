@@ -1,6 +1,6 @@
 javaModule.name = 'io.rhizomatic.samples.message.service'
 
 dependencies {
-    compileOnly group: 'io.rhizomatic', name: 'rhizomatic-inject', version: '1.0-SNAPSHOT'
+    compileOnly group: 'io.rhizomatic', name: 'rhizomatic-inject', version: rzVersion
 
 }
