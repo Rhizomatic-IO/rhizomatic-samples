@@ -18,6 +18,7 @@ dependencies {
 
     compile project(":webapp")
     compile project(":message-service")
-    compile project(":bootstrap-message-dev")
+//    compile project(":bootstrap-message-dev")
+    compile project(":bootstrap-message-gradle")
 }
 

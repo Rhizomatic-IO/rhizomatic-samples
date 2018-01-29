@@ -1,4 +1,4 @@
-package io.rhizomatic.bootstrap.dev;
+package io.rhizomatic.bootstrap.gradle;
 
 import io.rhizomatic.api.SystemDefinition;
 import io.rhizomatic.api.layer.LayerPathBuilder;
@@ -12,16 +12,16 @@ import java.util.List;
 import java.util.function.Predicate;
 
 /**
- * Defines the development system using the IDEA IntelliJ project layout.
+ * Defines the development system using the Gradle project layout.
  *
  * A single layer is produced with modules corresponding to Gradle subprojects except for the bootstrap and webapp subprojects.
  */
-public class DevSystemDefinition implements SystemDefinition {
+public class GradleSystemDefinition implements SystemDefinition {
     private static final Predicate<Path> GRADLE = (p) -> Files.exists(p.resolve("gradlew.bat")) && !Files.isDirectory(p.resolve("gradlew.bat"));
 
     public List<RzLayer> getLayers() {
         LayerPathBuilder firstBuilder = LayerPathBuilder.newInstance("main");
-        return List.of(firstBuilder.findRoot(GRADLE).javaPath("out/production/classes").excludes("bootstrap-message-dev", "bootstrap-message-production", "webapp").build());
+        return List.of(firstBuilder.findRoot(GRADLE).javaPath("build/classes/java").excludes("bootstrap-message-dev", "bootstrap-message-production", "bootstrap-message-gradle", "webapp").build());
     }
 
     public List<WebApp> getWebApps() {
