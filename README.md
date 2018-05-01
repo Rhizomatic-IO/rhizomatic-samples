@@ -1,31 +1,43 @@
 # Rhizomatic Samples
 
-## Launch the Gradle Build System
+## Run the sample
 
-From the root directory, ```./gradlew clean jar rhizomaticAssembly``` (*Nix) or ```gradlew clean jar rhizomaticAssembly```  (Windows)
+### *nix
+```
+./gradlew clean jar rhizomaticAssembly
+(cd runtime/build/image/ && exec java -p libraries:system:../../../bootstrap-message-gradle/build/classes/java/main/ -m io.rhizomatic.kernel/io.rhizomatic.kernel.Rhizomatic)
+```
 
-From the ```rhizomatic-samples/runtime/build/image/``` directory, execute:
+### Windows
+```
+gradlew clean jar rhizomaticAssembly
+cd runtime/build/image/
+java  -p libraries:system:../../../bootstrap-message-gradle/build/classes/java/main/ -m io.rhizomatic.kernel/io.rhizomatic.kernel.Rhizomatic
+```
 
-```java  -p libraries:system:<rhizomatic-samples>/bootstrap-message-gradle/build/classes/java/main/ -m io.rhizomatic.kernel/io.rhizomatic.kernel.Rhizomatic```
-
-On Windows, change ':' to ';'
-
-## Launch the Development System
+## Run the Development System
 
 Configure your IDE (currently IntelliJ is supported) to enable incremental compile and build the project.
+IntelliJ will then create the `out/production/classes` folder when building.
 
-From the ```rhizomatic-samples/runtime/build/image/``` directory, execute:
+### *nix
+```
+./gradlew clean jar rhizomaticAssembly
+(cd runtime/build/image/ && exec java -p libraries:system:../../../bootstrap-message-dev/out/production/classes/ -m io.rhizomatic.kernel/io.rhizomatic.kernel.Rhizomatic)
+```
 
-```java  -p libraries:system:<rhizomatic-samples>/bootstrap-message-dev/out/production/classes/ -m io.rhizomatic.kernel/io.rhizomatic.kernel.Rhizomatic```
-
-On Windows, change ':' to ';'
-
+### Windows
+```
+gradlew clean jar rhizomaticAssembly
+cd runtime/build/image/
+java  -p libraries:system:../../../bootstrap-message-dev/out/production/classes/ -m io.rhizomatic.kernel/io.rhizomatic.kernel.Rhizomatic
+```
 
 ## Invoke the Service
 
-Go to:
+1. Open API: http://localhost:8080/api/tests/test
+2. Open WebApp: http://localhost:8080/ui
 
-```http://localhost:8080/api/tests/test```
 
 ## Debugging
 
